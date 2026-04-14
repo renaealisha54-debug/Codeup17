@@ -1,0 +1,12 @@
+// src/editor.js
+export const EditorLogic = {
+    highlight(code) {
+        // Regex-based tokenizing
+        return code.replace(/\b(const|let|var|function)\b/g, '<span class="hl-keyword">$1</span>');
+    },
+    updateStats(code, pos) {
+        const lines = code.split('\n').length;
+        const col = pos - code.lastIndexOf('\n', pos - 1);
+        return { lines, col };
+    }
+};
