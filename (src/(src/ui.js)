@@ -1,0 +1,13 @@
+// src/ui.js
+export const UI = {
+    showModal(title, content) {
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-body').innerHTML = content;
+        document.getElementById('modal-overlay').style.display = 'flex';
+    },
+    updateStatusBar(text, color) {
+        const indicator = document.getElementById('status-indicator');
+        indicator.style.background = color;
+        document.getElementById('status-text').innerText = text;
+    }
+};
